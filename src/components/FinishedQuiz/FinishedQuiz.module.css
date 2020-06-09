@@ -5,6 +5,8 @@
     border-radius: 5px;
     box-sizing: border-box;
     margin: 0 10px;
+    background-color: rgba(41, 40, 40, 0.788);
+    box-shadow: 7px 10px 10px rgba(80, 75, 75, 0.788);
 }
 
 .FinishedQuiz ul {
@@ -14,7 +16,7 @@
 }
 
 .FinishedQuiz ul li i {
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .success {

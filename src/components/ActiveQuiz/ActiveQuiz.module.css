@@ -5,6 +5,8 @@
     border-radius: 5px;
     margin: 0 10px;
     box-sizing: border-box;
+    background-color: rgba(41, 40, 40, 0.788);
+    box-shadow: 7px 10px 10px rgba(80, 75, 75, 0.788);
 }
 
 .Question {

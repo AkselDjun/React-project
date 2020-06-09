@@ -2,12 +2,12 @@
     border: 1px solid #fff;
     border-radius: 5px;
     padding: 5px 10px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     cursor: pointer;
 }
 
 .AnswerItem:hover {
-    background: rgba(37, 35, 35, 0.103);
+    background: rgba(255, 255, 255, 0.233);
     transition: background .3s ease-in-out;
 }
 
