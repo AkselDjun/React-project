@@ -4,7 +4,7 @@
     padding-top: 80px;
     flex-grow: 1;
     width: 100%;
-    background: linear-gradient(to bottom right, rgb(0, 102, 204, 0.8) 16%, rgb(255, 0, 102, 0.7) 77%);
+    background: linear-gradient(to bottom right, rgb(11, 120, 230, 0.604) 16%, rgba(233, 7, 98, 0.604) 77%);
 }
 
 .Quiz h1 {

@@ -1,0 +1,35 @@
+.Auth {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    text-decoration: none;
+    background: linear-gradient(to bottom right, #d46e48 0%, #c44455 37%, #cc819c 100%);
+}
+
+.Auth > div {
+    padding: 0 20px;
+    width: 100%;
+    max-width: 430px;
+}
+
+.Auth h1 {
+    color: #fff;
+    text-align: center;
+}
+
+.AuthForm {
+    background: #1C1C1C;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+    padding: 40px 25px;
+    border-radius: 5px;
+    height: 300px;
+}
+
+
+.AuthForm label {
+    color: #fff;
+}
