@@ -120,6 +120,7 @@ export default class Auth extends Component {
 
                         {this.renderInputs()}
 
+
                         <Button
                             type="success"
                             onClick={this.loginHandler}

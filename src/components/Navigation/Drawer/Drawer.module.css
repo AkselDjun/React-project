@@ -5,9 +5,9 @@
     bottom: 0;
     width: 80%;
     max-width: 300px;
-    padding: 25px 15px;
+    padding: 25px 0px;
     box-sizing: border-box;
-    background: #DCDCDC;
+    background: linear-gradient(230deg, #DCDCDC 60%, #095ad3 60%);
     border-right: 7px solid #095ad3;
     transform: translate(0px);
     transition: transform .3s ease-in-out;
@@ -30,6 +30,8 @@
 }
 
 .Drawer ul li a {
+    display: flex;
+    justify-content: space-between;
     color: #0c101d;
     font-size: 31px;
     text-decoration: none;
@@ -40,6 +42,13 @@
 }
 
 .Drawer ul li a:hover, .active {
-    opacity: .5;
+    color: #7a7a7a;
+    transition: color .2s ease-in-out;
 }
 
+.Drawer ul li i {
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12.5px;
+}

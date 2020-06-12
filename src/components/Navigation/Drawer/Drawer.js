@@ -5,9 +5,9 @@ import Backdrop from "../../UI/Backdrop/Backdrop"
 
 
 const links = [
-    { to: "/", label: "Список", exact: true },
-    { to: "/auth", label: "Авторизация", exact: false },
-    { to: "/quiz-creator", label: "Создать тест", exact: false }
+    { to: "/", label: "Список", exact: true, icon: "fa fa-list" },
+    { to: "/auth", label: "Авторизация", exact: false, icon: "fa fa-sign-in" },
+    { to: "/quiz-creator", label: "Создать тест", exact: false, icon: "fa fa-plus" }
 ]
 
 class Drawer extends Component {
@@ -27,6 +27,9 @@ class Drawer extends Component {
                         onClick={this.clickHandler}
                     >
                         {link.label}
+                        <i
+                            className={link.icon}
+                        />
                     </NavLink>
                 </li>
             )

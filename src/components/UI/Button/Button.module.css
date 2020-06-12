@@ -7,6 +7,8 @@
     color: #fff;
     margin-right: 15px;
     font-size: 15px;
+    outline: none;
+    border: 0px;
 }
 
 .Button:focus {
@@ -15,6 +17,7 @@
 
 .Button:active {
     box-shadow: inset 2px 2px 1px rgba(0, 0, 0, .3);
+    border: none;
 }
 
 .Button:disabled {
@@ -34,4 +37,5 @@
 .primary {
     background: #2884f6;
     color: #fff;
+    border: 0px;
 }

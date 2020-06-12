@@ -13,7 +13,7 @@
     color: #fff;
     display: block;
     box-sizing: border-box;
-    background-color: #373737;
+    background-color: #444242;
     padding: 12px;
     margin: 0 0 5px;
     border-radius: 8px;
@@ -36,8 +36,7 @@
 }
 
 input::placeholder {
+    color: #919191;
     font-size: 18px;
-    display: flex;
-    align-items: flex-start;
-    justify-self: center;
 }
+

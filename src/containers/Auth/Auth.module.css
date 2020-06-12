@@ -13,23 +13,28 @@
 .Auth > div {
     padding: 0 20px;
     width: 100%;
-    max-width: 430px;
+    max-width: 410px;
 }
 
 .Auth h1 {
-    color: #fff;
+    color: #dcdcdc;
     text-align: center;
 }
 
 .AuthForm {
-    background: #1C1C1C;
+    background: rgb(24, 23, 23);
     box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
     padding: 40px 25px;
-    border-radius: 5px;
-    height: 300px;
+    border-radius: 10px;
+    height: 290px;
 }
 
 
 .AuthForm label {
     color: #fff;
+}
+
+.AuthForm Button {
+    margin-top: 10px;
+    margin-left: 28px;
 }
