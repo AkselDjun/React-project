@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
+
 .Drawer {
     position: fixed;
     left: 0;
@@ -7,6 +9,8 @@
     max-width: 300px;
     padding: 25px 0px;
     box-sizing: border-box;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    letter-spacing: 0.06em;
     background: linear-gradient(230deg, #DCDCDC 60%, #095ad3 60%);
     border-right: 7px solid #095ad3;
     transform: translate(0px);
@@ -47,8 +51,8 @@
 }
 
 .Drawer ul li i {
-    font-size: 22px;
+    font-size: 24px;
     display: flex;
     justify-content: space-between;
-    margin-top: 12.5px;
+    margin-top: 13px;
 }

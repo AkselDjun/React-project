@@ -7,7 +7,7 @@
     height: 100%;
     box-sizing: border-box;
     text-decoration: none;
-    background: linear-gradient(to bottom right, #d46e48 0%, #c44455 37%, #cc819c 100%);
+    background: linear-gradient(to bottom right, rgb(184, 108, 10) 30%, rgb(9, 108, 207) 67%);
 }
 
 .Auth > div {
