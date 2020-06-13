@@ -2,63 +2,19 @@ import React, { Component } from 'react';
 import classes from "./quiz.module.css"
 import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz"
 import FinishedQuiz from "../../components/FinishedQuiz/FinishedQuiz"
+import axios from "../../axios/axios-quiz"
+import Loader from "../../components/UI/Loader/Loader"
+
 
 
 class Quiz extends Component {
     state = {
-        results: {}, // {[id]: "success" "error"}
+        results: {},
         isFinished: false,
         activeQuestion: 0,
-        answerState: null, //{ [id]: "success" "error"}
-        quiz: [
-            {
-                question: "Какого цвета небо?",
-                rightAnswerId: 2,
-                id: 1,
-                answers: [
-                    { text: "Черного", id: 1 },
-                    { text: "Синего", id: 2 },
-                    { text: "Красного", id: 3 },
-                    { text: "Розового", id: 4 },
-                ]
-            },
-
-            {
-                question: "В какую пору года холодно?",
-                rightAnswerId: 4,
-                id: 2,
-                answers: [
-                    { text: "Летом", id: 1 },
-                    { text: "Осенью", id: 2 },
-                    { text: "Весной", id: 3 },
-                    { text: "Зимой", id: 4 },
-                ]
-            },
-
-            {
-                question: "В каком году началась Великая Отечественная Война?",
-                rightAnswerId: 1,
-                id: 3,
-                answers: [
-                    { text: 1941, id: 1 },
-                    { text: 1945, id: 2 },
-                    { text: 1939, id: 3 },
-                    { text: 1918, id: 4 },
-                ]
-            },
-
-            {
-                question: "В каком году затонул Титаник?",
-                rightAnswerId: 4,
-                id: 4,
-                answers: [
-                    { text: 1910, id: 1 },
-                    { text: 1914, id: 2 },
-                    { text: 1908, id: 3 },
-                    { text: 1912, id: 4 },
-                ]
-            }
-        ]
+        answerState: null,
+        quiz: [],
+        loading: true
     }
 
     onAnswerClickHandler = (answerId) => {
@@ -119,7 +75,18 @@ class Quiz extends Component {
         })
     }
 
-    componentDidMount() {
+    async componentDidMount() {
+        try {
+            const response = await axios.get(`quizes/${this.props.match.params.id}.json`)
+            const quiz = response.data
+
+            this.setState({
+                quiz,
+                loading: false
+            })
+        } catch (e) {
+            console.log(e)
+        }
         console.log("Quiz ID = ", this.props.match.params.id)
     }
 
@@ -131,20 +98,22 @@ class Quiz extends Component {
 
 
                     {
-                        this.state.isFinished
-                            ? <FinishedQuiz
-                                results={this.state.results}
-                                quiz={this.state.quiz}
-                                onRetry={this.retryHandler}
-                            />
-                            : <ActiveQuiz
-                                answers={this.state.quiz[this.state.activeQuestion].answers}
-                                question={this.state.quiz[this.state.activeQuestion].question}
-                                onAnswerClick={this.onAnswerClickHandler}
-                                quizLength={this.state.quiz.length}
-                                answerNumber={this.state.activeQuestion + 1}
-                                state={this.state.answerState}
-                            />
+                        this.state.loading
+                            ? <Loader />
+                            : this.state.isFinished
+                                ? <FinishedQuiz
+                                    results={this.state.results}
+                                    quiz={this.state.quiz}
+                                    onRetry={this.retryHandler}
+                                />
+                                : <ActiveQuiz
+                                    answers={this.state.quiz[this.state.activeQuestion].answers}
+                                    question={this.state.quiz[this.state.activeQuestion].question}
+                                    onAnswerClick={this.onAnswerClickHandler}
+                                    quizLength={this.state.quiz.length}
+                                    answerNumber={this.state.activeQuestion + 1}
+                                    state={this.state.answerState}
+                                />
                     }
                 </div>
             </div>
