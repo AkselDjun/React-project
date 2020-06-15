@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pragati+Narrow&display=swap');
+
 .QuizList {
     display: flex;
     justify-content: center;
@@ -9,6 +11,9 @@
 
 .QuizList h1 {
     color: #dcdcdc;
+    text-align: center;
+    font-family: 'Pragati Narrow', sans-serif;
+    letter-spacing: 0.04em;
 }
 
 .QuizList ul {

@@ -5,9 +5,9 @@
     left: 0;
     top: 0;
     bottom: 0;
-    width: 80%;
+    width: 100%;
     max-width: 300px;
-    padding: 25px 0px;
+    padding: 20px 0px;
     box-sizing: border-box;
     font-family: 'Sawarabi Gothic', sans-serif;
     letter-spacing: 0.06em;
@@ -29,7 +29,7 @@
 }
 
 .Drawer ul li {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     cursor: pointer;
 }
 
@@ -37,22 +37,22 @@
     display: flex;
     justify-content: space-between;
     color: #0c101d;
-    font-size: 31px;
+    font-size: 33px;
     text-decoration: none;
     background-color: #DCDCDC;
     position: relative;
-    padding: 0 20px 10px 20px;
+    padding: 0 15px 10px 15px;
     transition: opacity .6s;
 }
 
 .Drawer ul li a:hover, .active {
-    color: #7a7a7a;
-    transition: color .2s ease-in-out;
+    color: #727272;
+    transition: color .3s ease-in-out;
 }
 
 .Drawer ul li i {
-    font-size: 24px;
+    font-size: 26px;
     display: flex;
     justify-content: space-between;
-    margin-top: 13px;
+    margin-top: 14px;
 }

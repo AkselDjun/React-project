@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pragati+Narrow&display=swap');
+
 .QuizCreator {
     display: flex;
     justify-content: center;
@@ -16,6 +18,8 @@
 .QuizCreator h1 {
     text-align: center;
     color: #dcdcdc;
+    font-family: 'Pragati Narrow', sans-serif;
+    letter-spacing: 0.04em;
 }
 
 .QuizCreator form {

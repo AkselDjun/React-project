@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pragati+Narrow&display=swap');
+
 .Quiz {
     display: flex;
     justify-content: center;
@@ -8,8 +10,10 @@
 }
 
 .Quiz h1 {
-    color: #fff;
-    margin-left: 10px;
+    font-family: 'Pragati Narrow', sans-serif;
+    letter-spacing: 0.04em;
+    color: #dcdcdc;
+    text-align: center;
 }
 
 .QuizWrapper {
