@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Layout from "./higner order components/Layout/Layout"
 import { Route, Switch } from "react-router-dom"
+
+
+import Layout from "./higner order components/Layout/Layout"
 import Quiz from "./containers/Quiz/Quiz"
 import Auth from "./containers/Auth/Auth"
 import QuizList from "./containers/QuizList/QuizList"
@@ -8,7 +10,9 @@ import QuizCreator from "./containers/QuizCreator/QuizCreator"
 
 
 
+
 class App extends Component {
+
   render() {
     return (
       <Layout>
@@ -21,7 +25,6 @@ class App extends Component {
       </Layout>
     )
   }
-
 }
 
 export default App;

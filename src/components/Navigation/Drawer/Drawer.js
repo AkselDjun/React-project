@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from "./Drawer.module.css"
 import { NavLink } from "react-router-dom"
 import Backdrop from "../../UI/Backdrop/Backdrop"
+import logo from "../../../logo.png"
 
 
 const links = [
@@ -49,6 +50,11 @@ class Drawer extends Component {
                     <ul>
                         {this.renderLinks()}
                     </ul>
+                    <img
+                        src={logo}
+                        className={classes.logo}
+                        alt={"logo"}
+                    />
                 </nav>
                 {this.props.isOpen ? <Backdrop onClick={this.props.onClose} /> : null}
             </React.Fragment>

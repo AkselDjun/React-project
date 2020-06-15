@@ -6,20 +6,20 @@
     top: 0;
     bottom: 0;
     width: 100%;
-    max-width: 300px;
+    max-width: 330px;
     padding: 20px 0px;
     box-sizing: border-box;
     font-family: 'Sawarabi Gothic', sans-serif;
     letter-spacing: 0.06em;
     background: linear-gradient(230deg, #DCDCDC 60%, #095ad3 60%);
-    border-right: 7px solid #095ad3;
+    border-right: 8px solid #095ad3;
     transform: translate(0px);
     transition: transform .3s ease-in-out;
     z-index: 90;
 }
 
 .Drawer.close {
-    transform: translateX(-300px);
+    transform: translateX(-330px);
 }
 
 .Drawer ul {
@@ -29,30 +29,44 @@
 }
 
 .Drawer ul li {
-    margin-bottom: 12px;
     cursor: pointer;
+}
+
+.Drawer ul li i {
+    font-size: 25px;
+    margin-top: 14px;
 }
 
 .Drawer ul li a {
     display: flex;
     justify-content: space-between;
     color: #0c101d;
-    font-size: 33px;
+    font-size: 32px;
     text-decoration: none;
     background-color: #DCDCDC;
     position: relative;
-    padding: 0 15px 10px 15px;
-    transition: opacity .6s;
+    padding: 0px 25px 25px 10px;
 }
 
-.Drawer ul li a:hover, .active {
-    color: #727272;
-    transition: color .3s ease-in-out;
+.Drawer ul li a:hover:not(.active) {
+    color: #929292;
+    transition: margin-left, transform .3s ease-in-out;
+    transform: translateX(8px);
+    border-right: 8px solid #17d831;
 }
 
-.Drawer ul li i {
-    font-size: 26px;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 14px;
+.Drawer ul li a:not(:hover) {
+    transition: all .3s ease-in-out;
 }
+
+.active {
+    transform: translateX(8px);
+    border-right: 8px solid #17d831; 
+}
+
+.logo {
+    position: relative;
+    margin-left: 50px;
+    margin-top: 170%;
+}
+
