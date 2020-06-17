@@ -158,22 +158,23 @@ export default class QuizCreator extends Component {
 
 
                         {select}
+                        <div className={classes.divBtn}>
+                            <Button
+                                type="primary"
+                                onClick={this.addQuestionHandler}
+                                disabled={!this.state.isFormValid}
+                            >
+                                Добавить вопрос
+                            </Button>
 
-                        <Button
-                            type="primary"
-                            onClick={this.addQuestionHandler}
-                            disabled={!this.state.isFormValid}
-                        >
-                            Добавить вопрос
-                        </Button>
-
-                        <Button
-                            type="success"
-                            onClick={this.createQuizHandler}
-                            disabled={this.state.quiz.length === 0}
-                        >
-                            Создать тест
-                        </Button>
+                            <Button
+                                type="success"
+                                onClick={this.createQuizHandler}
+                                disabled={this.state.quiz.length === 0}
+                            >
+                                Создать тест
+                            </Button>
+                        </div>
                     </form>
                 </div>
             </div>

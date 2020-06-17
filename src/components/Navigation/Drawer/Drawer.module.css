@@ -65,8 +65,9 @@
 }
 
 .logo {
-    position: relative;
-    margin-left: 50px;
-    margin-top: 160%;
+    position: absolute;
+    margin-left: 70px;
+    bottom: 0px;
+    
 }
 
