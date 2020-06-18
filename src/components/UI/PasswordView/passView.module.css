@@ -1,0 +1,9 @@
+.passView {
+    position: fixed;
+    font-size: 24px;
+    right: 500px;
+    cursor: pointer;
+    color: #DCDCDC;
+    transition: opacity, left .3s ease-in-out;
+    z-index: 100;
+}

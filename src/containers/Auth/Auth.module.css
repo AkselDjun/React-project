@@ -3,7 +3,7 @@
 .Auth {
     display: flex;
     justify-content: center;
-    padding-top: 80px;
+    padding-top: 150px;
     flex-grow: 1;
     width: 100%;
     height: 100%;
@@ -18,24 +18,32 @@
     max-width: 410px;
 }
 
-.Auth h1 {
-    color: #dcdcdc;
-    text-align: center;
-    font-family: 'Pragati Narrow', sans-serif;
-    letter-spacing: 0.04em;
-}
 
 .AuthForm {
     background: #181717;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
-    padding: 40px 25px;
+    padding: 30px 20px;
     border-radius: 10px;
-    height: 290px;
+    height: 360px;
+}
+
+.formRegAuth {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+    color: #dcdcdc;
+    margin-top: -25px;
+    border-bottom: 2px solid #fff;
+}
+
+.formRegAuth h2 {
+    cursor: pointer;
 }
 
 
 .AuthForm label {
     color: #fff;
+    margin-top: 30px;
 }
 
 .formBtn  {

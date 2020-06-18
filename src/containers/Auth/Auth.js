@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from "./Auth.module.css"
 import Button from "../../components/UI/Button/Button"
 import Input from "../../components/UI/Input/Input"
+import Pass from "../../components/UI/PasswordView/passView"
 import is from "is_js"
 import axios from "axios"
 
@@ -9,6 +10,7 @@ import axios from "axios"
 export default class Auth extends Component {
 
     state = {
+        eye: false,
         isFormValid: false,
         formControls: {
             email: {
@@ -32,7 +34,7 @@ export default class Auth extends Component {
                 touched: false,
                 validation: {
                     required: true,
-                    minLength: 6
+                    minLength: 9
                 }
             }
         }
@@ -133,14 +135,27 @@ export default class Auth extends Component {
         })
     }
 
+    toggleEyeHandler = () => {
+        this.setState({
+            eye: !this.state.eye
+        })
+    }
+
     render() {
         return (
             <div className={classes.Auth}>
                 <div>
-                    <h1>Авторизация</h1>
-
                     <form onSubmit={this.submitHandler} className={classes.AuthForm}>
 
+                        <div className={classes.formRegAuth}>
+                            <h2>Sign In</h2>
+                            <h2>Sign Up</h2>
+                        </div>
+
+                        <Pass
+                            onToggleEye={this.toggleEyeHandler}
+                            isOpenEye={this.state.eye}
+                        />
                         {this.renderInputs()}
 
                         <div className={classes.formBtn}>
@@ -151,6 +166,19 @@ export default class Auth extends Component {
                             >
                                 Войти
                             </Button>
+                        </div>
+                    </form>
+
+                    {/* <form onSubmit={this.submitHandler} className={classes.AuthForm}>
+
+                        <div className={classes.formRegAuth}>
+                            <h2>Sign In</h2>
+                            <h2>Sign Up</h2>
+                        </div>
+
+                        {this.renderInputs()}
+
+                        <div className={classes.formBtn}>
                             <Button
                                 type="primary"
                                 onClick={this.registerHandler}
@@ -159,9 +187,9 @@ export default class Auth extends Component {
                                 Зарегистрироваться
                             </Button>
                         </div>
-                    </form>
+                    </form> */}
                 </div>
-            </div>
+            </div >
         )
     }
 }
