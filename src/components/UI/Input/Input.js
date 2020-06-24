@@ -27,11 +27,7 @@ const Input = props => {
                 placeholder={props.label}
             />
 
-            {
-                isInvalid(props)
-                    ? <span>{props.errorMessage || "Введите верное значение"}</span>
-                    : null
-            }
+
 
 
         </div>

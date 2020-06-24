@@ -13,9 +13,9 @@
 }
 
 .Auth > div {
-    padding: 0 20px;
+    padding: 0 10px;
     width: 100%;
-    max-width: 410px;
+    max-width: 400px;
 }
 
 
@@ -24,7 +24,7 @@
     box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
     padding: 30px 20px;
     border-radius: 10px;
-    height: 360px;
+    height: 400px;
 }
 
 .formRegAuth {
@@ -38,6 +38,7 @@
 
 .formRegAuth h2 {
     cursor: pointer;
+    font-size: 28px;
 }
 
 
@@ -47,8 +48,9 @@
 }
 
 .formBtn  {
-    padding-top: 20px;
+    padding-top: 25px;
     padding-left: 17.5px;
     display: flex;
     justify-content: center;
+    position: relative;
 }

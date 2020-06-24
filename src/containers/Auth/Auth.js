@@ -4,10 +4,11 @@ import Button from "../../components/UI/Button/Button"
 import Input from "../../components/UI/Input/Input"
 import Pass from "../../components/UI/PasswordView/passView"
 import is from "is_js"
-import axios from "axios"
+import { connect } from 'react-redux';
+import { auth } from '../../store/actions/auth';
 
 
-export default class Auth extends Component {
+class Auth extends Component {
 
     state = {
         eye: false,
@@ -40,34 +41,21 @@ export default class Auth extends Component {
         }
     }
 
-    loginHandler = async () => {
-        const authData = {
-            email: this.state.formControls.email.value,
-            password: this.state.formControls.password.value,
-            returnSecureToken: true
-        }
-        try {
-            const response = await axios.post("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCWXc6X-WY0S3X_sfkxwOPk1Lo6Dpk5Cr0", authData)
-
-            console.log(response.data)
-        } catch (e) {
-            console.log(e)
-        }
+    loginHandler = () => {
+        this.props.auth(
+            this.state.formControls.email.value,
+            this.state.formControls.password.value,
+            true
+        )
     }
 
-    registerHandler = async () => {
-        const authData = {
-            email: this.state.formControls.email.value,
-            password: this.state.formControls.password.value,
-            returnSecureToken: true
-        }
-        try {
-            const response = await axios.post("https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCWXc6X-WY0S3X_sfkxwOPk1Lo6Dpk5Cr0", authData)
+    registerHandler = () => {
+        this.props.auth(
+            this.state.formControls.email.value,
+            this.state.formControls.password.value,
+            false
+        )
 
-            console.log(response.data)
-        } catch (e) {
-            console.log(e)
-        }
     }
 
     submitHandler = event => {
@@ -152,11 +140,12 @@ export default class Auth extends Component {
                             <h2>Sign Up</h2>
                         </div>
 
+                        {this.renderInputs()}
                         <Pass
                             onToggleEye={this.toggleEyeHandler}
                             isOpenEye={this.state.eye}
                         />
-                        {this.renderInputs()}
+
 
                         <div className={classes.formBtn}>
                             <Button
@@ -165,6 +154,13 @@ export default class Auth extends Component {
                                 disabled={!this.state.isFormValid}
                             >
                                 Войти
+                            </Button>
+                            <Button
+                                type="primary"
+                                onClick={this.registerHandler}
+                                disabled={!this.state.isFormValid}
+                            >
+                                Зарегистрироваться
                             </Button>
                         </div>
                     </form>
@@ -193,3 +189,11 @@ export default class Auth extends Component {
         )
     }
 }
+
+function mapDispatchToProps(dispatch) {
+    return {
+        auth: (email, password, isLogin) => dispatch(auth(email, password, isLogin))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Auth)

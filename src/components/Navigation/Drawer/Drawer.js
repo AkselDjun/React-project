@@ -5,11 +5,6 @@ import Backdrop from "../../UI/Backdrop/Backdrop"
 import logo from "../../../logo.png"
 
 
-const links = [
-    { to: "/", label: "Список", exact: true, icon: "fa fa-list" },
-    { to: "/auth", label: "Авторизация", exact: false, icon: "fa fa-sign-in" },
-    { to: "/quiz-creator", label: "Создать тест", exact: false, icon: "fa fa-plus" }
-]
 
 class Drawer extends Component {
 
@@ -17,7 +12,7 @@ class Drawer extends Component {
         this.props.onClose()
     }
 
-    renderLinks() {
+    renderLinks(links) {
         return links.map((link, index) => {
             return (
                 <li ley={index}>
@@ -44,11 +39,26 @@ class Drawer extends Component {
             cls.push(classes.close)
         }
 
+        const links = [
+            { to: "/", label: "Список", exact: true, icon: "fa fa-list" }
+        ]
+
+        if (this.props.isAuthenticated) {
+            links.push(
+                { to: "/quiz-creator", label: "Создать тест", exact: false, icon: "fa fa-plus" },
+                { to: "/logout", label: "Выйти", exact: false, icon: "fa fa-sign-out" },
+            )
+        } else {
+            links.push(
+                { to: "/auth", label: "Авторизация", exact: false, icon: "fa fa-sign-in" },
+            )
+        }
+
         return (
             <React.Fragment>
                 <nav className={cls.join(" ")}>
                     <ul>
-                        {this.renderLinks()}
+                        {this.renderLinks(links)}
                     </ul>
                     <img
                         src={logo}
