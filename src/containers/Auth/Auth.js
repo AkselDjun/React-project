@@ -78,7 +78,7 @@ class Auth extends Component {
         }
 
         if (validation.minLength) {
-            isValid = value.length >= validation.minLength && isValid
+            isValid  = value.length >= validation.minLength && isValid
         }
 
         return isValid
