@@ -34,6 +34,7 @@
     color: #dcdcdc;
     margin-top: -25px;
     border-bottom: 2px solid #fff;
+    border-left: 2px solid gray;
 }
 
 .formRegAuth h2 {
